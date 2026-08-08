@@ -142,6 +142,69 @@ function App() {
 
 
         {/* =========================
+            RESIDENCE VIDEO TOUR
+        ========================= */}
+
+        <section className="videoTour">
+
+          <div className="videoTourInner">
+
+            <div className="videoTourHeading">
+
+              <p className="eyebrow">
+                EXPERIENCE KASHI NIRMAL HEIGHTS
+              </p>
+
+              <h2>
+                See the residence.
+                <br />
+                Imagine your life here.
+              </h2>
+
+              <p>
+                Take a closer look at the residences, spaces and lifestyle
+                envisioned at Kashi Nirmal Heights.
+              </p>
+
+            </div>
+
+            <div className="videoTourFrame">
+
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={A + 'hero-tower.jpg'}
+              >
+                <source
+                  src={A + 'residence-tour.mp4'}
+                  type="video/mp4"
+                />
+
+                Your browser does not support the video element.
+
+              </video>
+
+            </div>
+
+            <div className="videoTourCTA">
+
+              <a
+                href="#contact"
+                className="btn gold"
+              >
+                <CalendarDays size={16} />
+                Book a Site Visit
+              </a>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================
             OVERVIEW
         ========================= */}
 

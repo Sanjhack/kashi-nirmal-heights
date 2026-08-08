@@ -1423,3 +1423,125 @@ footer p {
   }
 
 }
+/* =========================
+   RESIDENCE VIDEO TOUR
+========================= */
+
+.videoTour {
+  width: 100%;
+  background: var(--deep);
+  color: #fff;
+  padding: 100px 7vw;
+  overflow: hidden;
+}
+
+.videoTourInner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.videoTourHeading {
+  max-width: 760px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.videoTourHeading h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 0.95;
+  margin: 0 0 25px;
+}
+
+.videoTourHeading p:last-child {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #bdc9c3;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.videoTourFrame {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+}
+
+.videoTourFrame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.videoTourCTA {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+
+/* =========================
+   RESIDENCE VIDEO TOUR
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .videoTour {
+    padding: 75px 6vw;
+  }
+
+  .videoTourFrame {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================
+   RESIDENCE VIDEO TOUR
+   MOBILE
+========================= */
+
+@media (max-width: 560px) {
+
+  .videoTour {
+    padding: 65px 5vw;
+  }
+
+  .videoTourHeading {
+    margin-bottom: 30px;
+  }
+
+  .videoTourHeading h2 {
+    font-size: 46px;
+    line-height: 0.98;
+  }
+
+  .videoTourHeading p:last-child {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .videoTourFrame {
+    width: 100%;
+  }
+
+  .videoTourFrame video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  .videoTourCTA {
+    margin-top: 25px;
+  }
+
+}
