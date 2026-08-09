@@ -21,6 +21,12 @@ const phone = '9250995854';
 const wa = `https://wa.me/91${phone}`;
 const A = '/assets/';
 
+const trackEvent = (eventName, eventParams = {}) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName, eventParams);
+  }
+};
+
 function App() {
   const nav = [
     ['Overview', 'overview'],
@@ -65,6 +71,11 @@ function App() {
           href={wa}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            trackEvent('whatsapp_click', {
+              location: 'navbar'
+            })
+          }
         >
           WhatsApp
         </a>
@@ -114,6 +125,11 @@ function App() {
               <a
                 className="btn gold"
                 href="#contact"
+                onClick={() =>
+                  trackEvent('site_visit_click', {
+                    location: 'hero'
+                  })
+                }
               >
                 <CalendarDays size={16} />
                 Book a Site Visit
@@ -124,6 +140,11 @@ function App() {
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent('whatsapp_click', {
+                    location: 'hero'
+                  })
+                }
               >
                 <MessageCircle size={17} />
                 WhatsApp
@@ -175,6 +196,16 @@ function App() {
                 playsInline
                 preload="metadata"
                 poster={A + 'hero-tower.jpg'}
+                onPlay={() =>
+                  trackEvent('video_start', {
+                    video_name: 'residence_tour'
+                  })
+                }
+                onEnded={() =>
+                  trackEvent('video_complete', {
+                    video_name: 'residence_tour'
+                  })
+                }
               >
                 <source
                   src={A + 'residence-tour.mp4'}
@@ -192,6 +223,11 @@ function App() {
               <a
                 href="#contact"
                 className="btn gold"
+                onClick={() =>
+                  trackEvent('site_visit_click', {
+                    location: 'video'
+                  })
+                }
               >
                 <CalendarDays size={16} />
                 Book a Site Visit
@@ -784,6 +820,10 @@ Requirement: ${message || 'Not specified'}
 Project: Kashi Nirmal Heights
 Location: Transport Nagar, Varanasi`;
 
+      trackEvent('site_visit_submit', {
+        lead_type: 'site_visit'
+      });
+
       window.open(
         `${wa}?text=${encodeURIComponent(text)}`,
         '_blank'
@@ -953,6 +993,11 @@ Location: Transport Nagar, Varanasi`;
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
+          onClick={() =>
+            trackEvent('whatsapp_click', {
+              location: 'floating'
+            })
+          }
         >
           <MessageCircle size={23} />
           <span>WhatsApp</span>
@@ -965,6 +1010,11 @@ Location: Transport Nagar, Varanasi`;
           className="floatingBtn floatingCall"
           href={`tel:+91${phone}`}
           aria-label="Call Us"
+          onClick={() =>
+            trackEvent('phone_click', {
+              location: 'floating'
+            })
+          }
         >
           <Phone size={22} />
           <span>Call Us</span>
@@ -977,6 +1027,11 @@ Location: Transport Nagar, Varanasi`;
           className="floatingBtn floatingVisit"
           href="#contact"
           aria-label="Book a Site Visit"
+          onClick={() =>
+            trackEvent('site_visit_click', {
+              location: 'floating'
+            })
+          }
         >
           <CalendarDays size={21} />
           <span>Book a Site Visit</span>
